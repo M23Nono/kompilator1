@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Laba1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -95,7 +96,7 @@ namespace Laba1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -277,24 +278,91 @@ namespace Laba1
 
         private void пускToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Получаем входной текст из TextBox
-            string input = richTextBox1.Text;
+           
 
-            // Создаем экземпляр лексера с входным текстом
-            Lexer lexer = new Lexer(input);
+        }
 
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Сканер_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void парсерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             try
             {
-                // Вызываем метод Tokenize для анализа текста
-                List<Token> tokens = lexer.Tokenize();
+                // Получаем текст из RichTextBox
+                string inputText = richTextBox1.Text;
 
-                // Очищаем предыдущие результаты
-                dataGridView1.Rows.Clear();
+                // Создаем экземпляр парсера
+                PHPCommentParser parser = new PHPCommentParser(inputText);
 
-                // Добавляем токены в DataGridView
-                foreach (var token in tokens)
+                // Вызываем метод ParseComments
+                List<PHPCommentParser.Error> errors = parser.ParseComments();
+
+                // Очищаем DataGridView перед добавлением новых данных
+                dataGridView2.Rows.Clear();
+
+                // Добавляем каждую ошибку в DataGridView
+                if (errors.Count == 0)
                 {
-                    dataGridView1.Rows.Add(new object[] { token.Code, token.Type.ToString(), token.Value, token.Column, token.StartIndex+1,token.EndIndex+1});
+                    // Создаем новую строку для DataGridView
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dataGridView2);
+
+                    // Устанавливаем значение "Ошибок нету" в колонку "Сообщение"
+                    row.Cells[2].Value = "Ошибок нету";
+
+                    // Устанавливаем цвет текста в черный для всех ячеек
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        cell.Style.ForeColor = Color.Black;
+                    }
+
+                    // Добавляем строку в DataGridView
+                    dataGridView2.Rows.Add(row);
+                }
+                else
+                {
+                    foreach (PHPCommentParser.Error error in errors)
+                    {
+                        // Создаем новую строку для DataGridView
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(dataGridView2);
+
+                        // Заполняем ячейки строки значениями
+                        row.Cells[0].Value = error.Number; // №
+                        row.Cells[1].Value = $"С {error.StartIndex} по {error.EndIndex}"; // Местоположение
+                        row.Cells[2].Value = error.Message; // Сообщение
+
+                        // Устанавливаем цвет текста в черный для всех ячеек
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            cell.Style.ForeColor = Color.Black;
+                        }
+
+                        // Добавляем строку в DataGridView
+                        dataGridView2.Rows.Add(row);
+                    }
                 }
             }
             catch (Exception ex)
@@ -303,6 +371,79 @@ namespace Laba1
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
+
+        private void сканерToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Получаем входной текст из TextBox
+                string input = richTextBox1.Text;
+
+                // Создаем экземпляр лексера с входным текстом
+                Lexer lexer = new Lexer(input);
+
+                // Вызываем метод Tokenize для анализа текста
+                List<Token> tokens = lexer.Tokenize();
+
+                // Очищаем предыдущие результаты
+                dataGridView1.Rows.Clear();
+
+                // Устанавливаем начальные позиции для форматирования
+                int start = 0;
+
+                // Добавляем токены в DataGridView и форматируем комментарии
+                foreach (var token in tokens)
+                {
+                    string commentType = ""; // Переменная для хранения названия комментария
+
+                    // Определяем название комментария в зависимости от типа токена
+                    switch (token.Type)
+                    {
+                        case TokenType.Kommentariy:
+                            commentType = "Однострочный комментарий";
+                            break;
+                        case TokenType.Kommentar1y:
+                            commentType = "Хэш-комментарий";
+                            break;
+                        case TokenType.Dvuxstrochniykomm:
+                            commentType = "Многострочный комментарий - начало";
+                            break;
+                        case TokenType.Konecdvuxstrochnogo:
+                            commentType = "Многострочный комментарий - конец";
+                            break;
+                        case TokenType.Perexodnanovuyustroky:
+                            commentType = "Переход на новую строку";
+                            break;
+                        case TokenType.Symbol:
+                            commentType = "Символ";
+                            break;
+                        default:
+                            commentType = "Неизвестный тип";
+                            break;
+                    }
+
+                    // Добавляем строку в DataGridView
+                    dataGridView1.Rows.Add(new object[] { token.Code, commentType, token.Value, token.Column, token.StartIndex + 1, token.EndIndex + 1 });
+
+                    // Форматируем текст после однострочных комментариев "#" в черный цвет
+                    if (token.Type == TokenType.Kommentar1y && token.Value == "#")
+                    {
+                        richTextBox1.Select(token.EndIndex + 1, input.Length - (token.EndIndex + 1));
+                        richTextBox1.SelectionColor = Color.Black;
+                    }
+                }
+
+                // Восстанавливаем форматирование для оставшейся части текста
+                richTextBox1.Select(start, input.Length - start);
+                richTextBox1.SelectionColor = Color.Black;
+            }
+            catch (Exception ex)
+            {
+                // В случае ошибки выводим сообщение
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Очищаем предыдущие результаты
+                dataGridView1.Rows.Clear();
+            }
+        }
     }
 }
