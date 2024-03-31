@@ -60,3 +60,15 @@ COMMENT -> LINE_COMMENT | MULTI_COMMENT
 LINE_COMMENT -> // anyCharacter* newline
 MULTI_COMMENT -> /* anyCharacter* */
 ![граф](https://github.com/M23Nono/kompilator1/assets/34939868/cda3d4f0-310b-4837-948d-eea01ce833d1)
+### Работа программы 
+![1foto](https://github.com/M23Nono/kompilator1/assets/34939868/c58415cd-58ca-49cd-93f3-5ef5d9da56b2)
+![2foto](https://github.com/M23Nono/kompilator1/assets/34939868/ad86da3d-7d37-45d5-9ff6-d5cca25468ec)
+![3foto](https://github.com/M23Nono/kompilator1/assets/34939868/b22a7288-3ed0-42f6-921d-ac048c0f108b)
+
+
+
+
+
+
+
+
