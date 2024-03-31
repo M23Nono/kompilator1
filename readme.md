@@ -59,3 +59,4 @@ P:
 COMMENT -> LINE_COMMENT | MULTI_COMMENT
 LINE_COMMENT -> // anyCharacter* newline
 MULTI_COMMENT -> /* anyCharacter* */
+![граф](https://github.com/M23Nono/kompilator1/assets/34939868/cda3d4f0-310b-4837-948d-eea01ce833d1)
