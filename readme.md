@@ -54,7 +54,7 @@
 **Диаграмма состояний сканера**
 ![image](https://github.com/M23Nono/kompilator1/assets/34939868/516782f0-d96a-4d6b-b7c2-058e71b99412)
 
-![https://sun9-79.userapi.com/impg/F3D3KOzXl4WztQ7DPERB-j_fp0luN8UolF197w/vwEphWW_f_k.jpg?size=906x656&quality=96&sign=06813fbf8a207289089322644423b889&type=album]
+
 ## **Тестовые примеры**
 1. Входная строка: `$var = 42;`
 `2 - идентификатор - var - с 1 по 3 символ
