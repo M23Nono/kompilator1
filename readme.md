@@ -86,13 +86,16 @@ LINE_COMMENT, // Однострочный комментарий (начинае
 MULTI_COMMENT // Многострочный комментарий (начинается с "/" и заканчивается "/")
 }
 
-P = {
-COMMENT -> LINE_COMMENT | MULTI_COMMENT | anyCharacter COMMENT
-LINE_COMMENT -> "//" LINE_COMMENT_BODY
-LINE_COMMENT_BODY -> anyCharacter LINE_COMMENT_BODY | newline LINE_COMMENT_BODY | END
-MULTI_COMMENT -> "/*" MULTI_COMMENT_BODY
-MULTI_COMMENT_BODY -> anyCharacter MULTI_COMMENT_BODY | MULTI_COMMENT_END
-MULTI_COMMENT_END -> "*/" COMMENT | END
+P = {K -> / SLASH | /MULTICOM | #HASHCOM
+SLASH -> / SLASH 2
+SLASH2 -> symbol/text
+TEXT -> symbol / TEXT /;
+MULTICOM -> * TEXTMUL
+TEXT MUL -> symbol/ {symbol} /ENDMUL
+ENDMUL -> * SLASHMUL
+SLASHMUL ->/
+SLASHCOM -> symbol {symbol} ENDSLASH
+ENDSLASH ->;
 }
 
 Здесь:
