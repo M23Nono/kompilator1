@@ -109,7 +109,9 @@ P:
 COMMENT -> LINE_COMMENT | MULTI_COMMENT
 LINE_COMMENT -> // anyCharacter* newline
 MULTI_COMMENT -> /* anyCharacter* */
-![граф](https://github.com/M23Nono/kompilator1/assets/34939868/cda3d4f0-310b-4837-948d-eea01ce833d1)
+###Граф конечного автомата комментариев на PHP
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/d833ad82-bcf7-4d21-9698-c230a2d798ff)
+
 ### Работа программы 
 ![1foto](https://github.com/M23Nono/kompilator1/assets/34939868/c58415cd-58ca-49cd-93f3-5ef5d9da56b2)
 ![2foto](https://github.com/M23Nono/kompilator1/assets/34939868/ad86da3d-7d37-45d5-9ff6-d5cca25468ec)
