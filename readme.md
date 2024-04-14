@@ -112,7 +112,8 @@ COMMENT -> LINE_COMMENT | MULTI_COMMENT
 LINE_COMMENT -> // anyCharacter* newline
 MULTI_COMMENT -> /* anyCharacter* */
 ### Граф конечного автомата комментариев на PHP
-![image](https://github.com/M23Nono/kompilator1/assets/34939868/d833ad82-bcf7-4d21-9698-c230a2d798ff)
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/dd944540-77b3-4448-8124-91cbfa5c8986)
+
 
 ### Работа программы 
 ![1foto](https://github.com/M23Nono/kompilator1/assets/34939868/c58415cd-58ca-49cd-93f3-5ef5d9da56b2)
