@@ -114,8 +114,6 @@ MULTI_COMMENT -> /* anyCharacter* */
 ### Граф конечного автомата комментариев на PHP
 ![image](https://github.com/M23Nono/kompilator1/assets/34939868/5a5885c9-3e96-402d-95f2-55b0ddc8e9d2)
 
-![image](https://github.com/M23Nono/kompilator1/assets/34939868/dd944540-77b3-4448-8124-91cbfa5c8986)
-
 
 ### Работа программы 
 ![1foto](https://github.com/M23Nono/kompilator1/assets/34939868/c58415cd-58ca-49cd-93f3-5ef5d9da56b2)
