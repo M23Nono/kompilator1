@@ -96,7 +96,7 @@ MULTICOM -> * TEXTMUL
 TEXT MUL -> symbol/ {symbol} /ENDMUL
 ENDMUL -> * SLASHMUL
 SLASHMUL ->/
-SLASHCOM -> symbol {symbol} ENDSLASH
+HASHCOM -> symbol {symbol} ENDSLASH
 ENDSLASH ->;
 }
 
@@ -112,6 +112,8 @@ COMMENT -> LINE_COMMENT | MULTI_COMMENT
 LINE_COMMENT -> // anyCharacter* newline
 MULTI_COMMENT -> /* anyCharacter* */
 ### Граф конечного автомата комментариев на PHP
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/5a5885c9-3e96-402d-95f2-55b0ddc8e9d2)
+
 ![image](https://github.com/M23Nono/kompilator1/assets/34939868/dd944540-77b3-4448-8124-91cbfa5c8986)
 
 
