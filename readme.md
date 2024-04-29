@@ -120,6 +120,22 @@ MULTI_COMMENT -> /* anyCharacter* */
 ![2foto](https://github.com/M23Nono/kompilator1/assets/34939868/ad86da3d-7d37-45d5-9ff6-d5cca25468ec)
 ![3foto](https://github.com/M23Nono/kompilator1/assets/34939868/b22a7288-3ed0-42f6-921d-ac048c0f108b)
 
+# Лабораторная №5
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/dabcdea5-4d2d-449f-b355-8a36fd3fb3fe)
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/2972cb7b-efff-48a3-bfa0-20e28d2d26cd)
+
+
+# Лабораторная №6
+1) Построить РВ для того, чтобы найти все годы между 2011 и 2018.
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/da582e96-5d23-45a6-8e0d-0c949220d699)
+2) Построить РВ для поиска ИНН физических и юридических лиц
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/02268412-06a3-402d-81aa-88a8287324a7)
+3) Построить РВ, описывающее долготу (учесть диапазон корректных значений).
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/473ecc3d-668b-411b-a467-771fe3704b49)
+
+
+
+
 
 
 
