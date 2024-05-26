@@ -127,11 +127,19 @@ MULTI_COMMENT -> /* anyCharacter* */
 
 # Лабораторная №6
 1) Построить РВ для того, чтобы найти все годы между 2011 и 2018.
+
 ![image](https://github.com/M23Nono/kompilator1/assets/34939868/da582e96-5d23-45a6-8e0d-0c949220d699)
 2) Построить РВ для поиска ИНН физических и юридических лиц
+
 ![image](https://github.com/M23Nono/kompilator1/assets/34939868/02268412-06a3-402d-81aa-88a8287324a7)
 3) Построить РВ, описывающее долготу (учесть диапазон корректных значений).
+
 ![image](https://github.com/M23Nono/kompilator1/assets/34939868/473ecc3d-668b-411b-a467-771fe3704b49)
+
+# Лабораторная №7
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/a1f1f17e-df2a-4c64-93e2-65346cf394f4)
+
+![image](https://github.com/M23Nono/kompilator1/assets/34939868/3b94b049-4dce-48a3-a188-93dc78f06987)
 
 
 
